@@ -30,8 +30,8 @@ def move(tokenAddressArray: address[20], tokenAmountArray: uint256[20], recipien
         #If everything is OK, move tokens
         if (tokenAddress != ZERO_ADDRESS and amount != 0):
             self.token = ERC20Token(tokenAddress)
-            assert self.token.balanceOf(msg.sender) >= amount #* 10 ** 18
-            self.token.transferFrom(msg.sender, recipient, amount) #* 10 ** 18)
+            assert self.token.balanceOf(msg.sender) >= amount
+            self.token.transferFrom(msg.sender, recipient, amount)
     #Move ETH, if tip == True, move tip to contract balance
     if (msg.value > 0):
         if (sendTip):
